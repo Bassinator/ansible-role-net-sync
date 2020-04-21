@@ -21,7 +21,7 @@
     owner: "{{ installation_os_user }}"
     group: "{{ installation_os_group }}"
   with_items:
-    - sync_home.prf
+    - home_sync.prf
 
 - name: copy backup and restore script
   copy:
