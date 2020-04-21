@@ -26,7 +26,8 @@
 - name: copy backup and restore script
   copy:
     src: "{{ item }}"
-    dest: "/user/sbin/"
+    dest: "/usr/sbin/"
+    mode: '644'
   with_items:
     - backup.sh
     - restore.sh
