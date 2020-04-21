@@ -1,0 +1,8 @@
+sshargs = -C
+
+ignore PATH .cache/*
+ignore Name unison.log
+ignore Path .unison/*
+ignore Path .config
+
+ignore Path .*

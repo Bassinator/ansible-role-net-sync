@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include bassinator.net_sync"
+      include_role:
+        name: "bassinator.net_sync"
