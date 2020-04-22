@@ -31,3 +31,4 @@
   with_items:
     - backup_home.sh
     - restore_home.sh
+    - switch_user.sh
