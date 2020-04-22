@@ -44,5 +44,5 @@
 - name: change prompt to reflect hostname change immediatly
   replace:
     path: "/home/{{ installation_os_user }}/.bashrc"
-    regexp: "@\\h"
+    regexp: '@\\h'
     replace: "@$(hostname)"
