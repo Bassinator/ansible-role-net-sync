@@ -36,7 +36,7 @@
 - name: copy switch_user script
   copy:
     src: "{{ item }}"
-    dest: "sbin/"
+    dest: "/sbin/"
     mode: '744'
   with_items:
     - switch_user
