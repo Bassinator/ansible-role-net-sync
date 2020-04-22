@@ -30,16 +30,16 @@
     dest: "/usr/bin/"
     mode: '777'
   with_items:
-    - backup_home.sh
-    - restore_home.sh
+    - backup_home
+    - restore_home
 
 - name: copy switch_user script
   copy:
     src: "{{ item }}"
-    dest: "/usr/sbin/"
+    dest: "sbin/"
     mode: '744'
   with_items:
-    - switch_user.sh
+    - switch_user
 
 - name: change prompt to reflect hostname change immediatly
   replace:
