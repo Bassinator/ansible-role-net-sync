@@ -31,4 +31,11 @@
   with_items:
     - backup_home.sh
     - restore_home.sh
+
+- name: copy switch_user script
+  copy:
+    src: "{{ item }}"
+    dest: "/usr/sbin/"
+    mode: '744'
+  with_items:
     - switch_user.sh
