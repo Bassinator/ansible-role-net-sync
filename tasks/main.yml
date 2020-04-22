@@ -40,3 +40,10 @@
     mode: '744'
   with_items:
     - switch_user.sh
+
+- name: change prompt to reflect hostname change immediatly
+  replace:
+    path: "/home/{{ installation_os_user }}/.bashrc"
+    regexp: "@\\h"
+    replace: "@$(hostname)"
+
