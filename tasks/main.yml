@@ -46,4 +46,3 @@
     path: "/home/{{ installation_os_user }}/.bashrc"
     regexp: "@\\h"
     replace: "@$(hostname)"
-
