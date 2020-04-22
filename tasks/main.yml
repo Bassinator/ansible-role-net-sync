@@ -1,9 +1,10 @@
 ---
 
-- name: install unison
+- name: install unison and avahi-utils
   apt:
     name:
       - unison
+      - avahi-utils
     state: present
   become: true
 
