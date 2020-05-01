@@ -24,7 +24,7 @@ jobs:
     
     - name: install prerequisites
       run: |
-        sudo apt install docker.io
+        sudo apt install docker.io python-setuptools
         pip3 --version
         pip3 install molecule ansible docker
 
