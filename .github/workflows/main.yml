@@ -26,6 +26,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         cd ../
-        mv ansible-role-net-sync bassinator.$ROLE_NAME
-        cd bassinator.$ROLE_NAME
-        molecule test
+        ls
