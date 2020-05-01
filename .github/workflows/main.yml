@@ -24,7 +24,7 @@ jobs:
     
     - name: install prerequisites
       run: |
-        apt install docker.io
+        sudo apt install docker.io
         pip install molecule ansible docker
 
     # Runs a set of commands using the runners shell
