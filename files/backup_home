@@ -4,7 +4,8 @@ set -e
 if ! ssh -q -o BatchMode=yes syncuser@epicraspberries.ddns.ent "$@" true
 then
   echo "RECHNER NOCH NICHT REGISTRIERT. PASSWORT NOTWENDIG" 
-  if [ ! -f "$HOME/.ssh/id_rsa" ] then
+  if [ ! -f "$HOME/.ssh/id_rsa" ]
+  then
     ssh-keygen -q -f "$HOME/.ssh/id_rsa" -N ""
   fi
   ssh-copy-id syncuser@epicraspberries.ddns.net
