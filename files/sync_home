@@ -3,6 +3,6 @@ set -e
 
 if ! ssh -q -o BatchMode=yes syncuser@epicraspberries.ddns.ent "$@" true
 then
-  echo "RECHNER NOCH NICHT REGISTRIERT. backup_home oder restore_home nötig"
+  echo "RECHNER NOCH NICHT REGISTRIERT. backup_home oder restore_home notwendig"
 fi
 unison home_sync -root /home/pi -root ssh://syncuser@epicraspberries.ddns.net//mnt/usb/$(hostname)
