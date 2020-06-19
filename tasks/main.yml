@@ -24,7 +24,7 @@
   with_items:
     - home_sync.prf
 
-- name: copy backup and restore script
+- name: copy sync scripts
   copy:
     src: "{{ item }}"
     dest: "/usr/bin/"
@@ -32,12 +32,13 @@
   with_items:
     - backup_home
     - restore_home
+    - sync_home
 
 - name: copy switch_user script
   copy:
     src: "{{ item }}"
     dest: "/sbin/"
-    mode: '755'
+    mode: '744'
   with_items:
     - switch_user
 
