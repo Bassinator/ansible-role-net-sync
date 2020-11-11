@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if ! ssh -q -o BatchMode=yes syncuser@epicraspberries.ddns.ent "$@" true
+if ! ssh -q -o BatchMode=yes syncuser@epicraspberries.ddns.net "$@" true
 then
   echo "RECHNER NOCH NICHT REGISTRIERT. PASSWORT NOTWENDIG"
   if [ ! -f "$HOME/.ssh/id_rsa" ]
