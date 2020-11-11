@@ -7,19 +7,16 @@ lint: |
   set -e
   yamllint .
   ansible-lint -x 503
+  flake8
 platforms:
   - name: debian10
     image: debian:buster
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
-    options:
-      x:
-        - 303  # ignore check to usen archive instead of tar
-        - 306  # ignore pipefail for pipes. Testing
-        - 503  # task when changed allowed no hanler needed
 scenario:
   name: default
+  converge_sequence:
+    - prepare
+    - converge
 verifier:
   name: testinfra
