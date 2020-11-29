@@ -5,14 +5,17 @@ if [ ! "$#" -eq 1 ]
   exit 1
 fi
 
-if [[ $(avahi-resolve-host-name $1.local 2>&1) =~ ^"$1" ]]
+host_name=$1
+domain_name=$(hostname -d)
+
+if [[ $(avahi-resolve-host-name ${host_name}.${domain_name} 2>&1) =~ ^"$1" ]]
 then
-  echo error: hostname $1 already in use in your local network
+  echo error: hostname ${host_name}.${domain_name} already in use in your local network
   exit 1
 fi
 
 host_name=$1
 echo $host_name | sudo tee /etc/hostname
-sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
+sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name.$domain_name"'\t'"$host_name"'/' /etc/hosts
 hostnamectl set-hostname $host_name
 systemctl restart avahi-daemon
