@@ -11,4 +11,4 @@ then
   ssh-copy-id -p 2222 $(hostname)@ubhkxntypimkfegke3fggj4ope4loh2uh4odywuwbsdphw5gwjqif7id.onion
   echo "RECHNER ERFOLGREICH REGISTRIERT"
 fi
-rsync -e 'ssh -p 2222' --exclude-from .backup_excludes -avzP /home/pi/ karla-bukatz@ubhkxntypimkfegke3fggj4ope4loh2uh4odywuwbsdphw5gwjqif7id.onion:~/
+rsync -e 'ssh -p 2222' --exclude-from ~/.backup_excludes -avzP /home/pi/ karla-bukatz@ubhkxntypimkfegke3fggj4ope4loh2uh4odywuwbsdphw5gwjqif7id.onion:~/
