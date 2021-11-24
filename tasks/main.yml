@@ -41,9 +41,16 @@
     mode: '777'
   with_items:
     - backup_home
-    - backup_home2
     - restore_home
     - sync_home
+
+- name: copy new version sync scripts
+  template:
+    src: "{{ item }}"
+    dest: "/usr/bin/"
+    mode: '777'
+  with_items:
+    - backup_home2
 
 - name: copy switch_user script
   copy:
