@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: net-sync
+  role_name: net_sync
   author: Bassinator
   namespace: einfachit
   description: backup and restore home directory to unison server
